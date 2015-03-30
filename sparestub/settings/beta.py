@@ -20,7 +20,7 @@ STATICFILES_DIRS = (
 
 
 ALLOWED_HOSTS = ['beta.sparestub.com', 'sparestub-beta.herokuapp.com']
-abc
+abcdef
 # Used to create links in emails to our site
 DOMAIN = 'https://beta.sparestub.com'
 

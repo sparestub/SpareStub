@@ -22,7 +22,7 @@ function validate_date_not_before_today(value) {
         return true;
     }
     return false;
-}
+};
 
 function show_stripe_modal(handler) {
     'use strict';
@@ -35,7 +35,7 @@ function show_stripe_modal(handler) {
         email: window.additional_parameters.user_email,
         panelLabel: 'Pay $5 Fee'
     });
-}
+};
 
 
 // We need to kick the function off when we finish loading the modal content/
@@ -146,4 +146,4 @@ function initialize_bootstrap_validator_submit_ticket() {
             show_stripe_modal(handler);
         }
     });
-}
+};

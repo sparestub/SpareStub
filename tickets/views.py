@@ -1,6 +1,7 @@
 # Standard Imports
 import logging
 import stripe
+import requests
 
 # Django imports
 from django.contrib.auth.decorators import login_required
@@ -52,10 +53,17 @@ def submit_ticket(request):
             token = submit_ticket_form.cleaned_data.get('token')
             card_id = submit_ticket_form.cleaned_data.get('card_id')
 
-
             try:
                 customer, card = create_customer_and_card(user, token, card_id)
             except StripeError as e:
+                logging.critical('Ticket creation failed')
+                return ajax_other_message('Uh oh, it looks like our server broke! Our developers are on it.', 400)
+            except requests.exceptions.Timeout:
+                # Maybe set up for a retry, or continue in a retry loop
+                logging.critical('Ticket creation failed')
+                return ajax_other_message('Uh oh, it looks like our server broke! Our developers are on it.', 400)
+            except requests.exceptions.RequestException as e:
+                # catastrophic error. bail.
                 logging.critical('Ticket creation failed')
                 return ajax_other_message('Uh oh, it looks like our server broke! Our developers are on it.', 400)
 

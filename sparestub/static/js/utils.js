@@ -80,6 +80,8 @@ var handle_ajax_response = function (response, $notification_root) {
     // We expect any ajax response to either redirect, give some type of notification, or reload the current page
     } else if (response.status === 500) {
         show_popup_notification_modal("Uh oh, looks like our server broke. Our developers are on it", 'danger');
+    } else if (response.status === 503) {
+        show_popup_notification_modal("Uh oh, looks like our server broke. Our developers are on it", 'danger');
     } else {
         window.location.reload();
     }

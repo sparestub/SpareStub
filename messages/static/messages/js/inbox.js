@@ -68,7 +68,7 @@ function send_message(e) {
             'json')
      .done(function (data, textStatus, xhr) {
          // fire when message is sent.
-         ss.gaEvents.track("button", "click", "Sent Message");
+         ss.gaEvents.track("button", "click", "Sent Message", {});
      });
 
     // Blank out the message box so that a new message can be sent

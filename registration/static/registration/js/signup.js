@@ -46,7 +46,7 @@ function initialize_bootstrap_validator_signup(redirect) {
                 handle_ajax_response(data, $('#signup-notification-root'));
 
                 // fire when account is create(d).
-                ss.gaEvents.track("button", "click", "Created Account");
+                ss.gaEvents.track("button", "click", "Created Account", {});
             })
             .fail(function (data, textStatus, xhr) {
                 // Obviously there are cases were we never reached the server (internet down or incredibly high loads

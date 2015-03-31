@@ -151,15 +151,18 @@ var ss = ss || {};
 //
 ss.gaEvents = function () {
     // wire-up event and send-message.
-    var bindClickAndTrack = function (el, category, action, value) {
+    var bindClickAndTrack = function (el, category, action, label, value) {
         // Using jQuery Event API v1.3
         $(el).on('click', function () {
-            send(category, action, value);
+            send(category, action, label, value);
         });
     },
 
     // track / send-message only.
-    track = function (category, action, value) {
+    track = function (category, action, label, value) {
+        if (typeof ga == "undefined")
+            return;
+
         ga('send', 'event', category, action, label, value);
     };
     return { bindClickAndTrack: bindClickAndTrack, track: track };

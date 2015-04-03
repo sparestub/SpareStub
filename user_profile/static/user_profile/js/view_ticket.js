@@ -74,6 +74,10 @@ function modal_message_user_button() {
           'body': $('#message-user-body').val()
           },
           'json')
+     .done(function (data, textStatus, xhr) {
+         // fire when message is sent.
+         ss.gaEvents.track("button", "click", "Sent Message", {});
+     })
     .fail(function(response) {
         handle_ajax_response(response);
     });

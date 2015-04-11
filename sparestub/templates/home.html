@@ -13,20 +13,21 @@
   <div id="introduction" style="background-image: url({% static "sparestub/backgrounds/concert-optimized.jpg" %});">
     <div class="container">
       <div class="row text-center">
-        <h3 id="top-intro1" class="col-xs-12 title top-intro">Buyers and sellers attend events together</h3>
-        <h3 id="top-intro2" class="col-xs-12 title top-intro">It's ticket resale... but better</h3>
+        <h1 class="col-xs-12 section-title intro-section">
+			<span class="shadow-black">Buyers and sellers attend events together</span>
+		</h1>
+		<h3 class="col-xs-12 section-title intro-section">
+			<span class="shadow-black">It's ticket resale... but better</span>
+		</h3>
         <div id="intro-button-div" class="col-xs-12">
           <div id="left-intro">
               <button id="search-now" class="btn btn-primary intro-btn" type="button">Search Now</button>
           </div>
           <div id="right-intro">
           {% if user.is_authenticated %}
-            <button class="btn btn-primary intro-btn submit-ticket-form-button" type="button"
-                    data-toggle="modal">Submit Your Stub</button>
+            <button class="btn btn-primary intro-btn submit-ticket-form-button" type="button" data-toggle="modal">Submit Your Stub</button>
           {% else %}
-            <button class="btn btn-primary intro-btn signup-form-button"
-                    type="button" data-toggle="modal" data-target="#modal-signup-root">Join In!</button>
-
+            <button class="btn btn-primary intro-btn signup-form-button" type="button" data-toggle="modal" data-target="#modal-signup-root">Join In!</button>
           {% endif %}
           </div>
         </div>
@@ -42,46 +43,56 @@
   </div>
   <div id="introducing-sparestub" style="background-image: url({% static "sparestub/backgrounds/homepage_colored_lights.jpg" %});">
     <div class="container">
-      <h3>Introducing SpareStub</h3>
-      <h4>We're building a community of fans. Join our growing family to sell your spare stub or buy one.</h4>
-      <h2>Fairly Priced Tickets.</h2>
-      <h2 id="new-friends">New Friends.</h2>
-      <h4>What kinds of stubs? Concerts, festivals, sports, Broadway, movie premiers, lift tickets... anything!</h4>
-      <h4>Never find yourself with an extra ticket again.</h4>
+	  <div class="content">
+		  <h2 class="section-title shadow-black">Introducing SpareStub</h2>
+		  <p>We're building a community of fans. Join our growing family to sell your spare stub or buy one.</p>
+		  <h3 class="section-title">
+			<span class="shadow-black">Fairly Priced Tickets.</span>
+			<span class="shadow-black">New Friends.</span>
+		  </h3>
+		  <p>What kinds of stubs? Concerts, festivals, sports, Broadway, movie premiers, lift tickets... anything!</p>
+		  <p>Never find yourself with an extra ticket again.</p>
+	  </div>
     </div>
   </div>
 
-  <div id="how-it-works" style="background-image: url({% static "sparestub/backgrounds/squared_metal.png" %});">
+  <div id="how-it-works">
     <div class="container-fluid">
       <div id="steps" class="row">
-        <h1 class="col-xs-12 title">How It Works</h1>
+        <h2 class="col-xs-12 section-title shadow-white">How It Works</h2>
         <div id="step-1" class="step text-center col-xs-12 col-sm-4">
+<!--
           <div class="step-explanation center-block">
-             <h4><i>It's where sellers...</i></h4>
+             <h4>It's where sellers...</h4>
           </div>
+-->
           <img class="step-image" src="{% static "sparestub/logos/post-optimized.png" %}">
           <div class="step-explanation center-block">
-            <h4>Sell your stub. Find a gig buddy</h4>
+            <span class="title">Sell your stub. Find a gig buddy</span>
             <p>Have an extra ticket? Post it for free and watch the requests come in! Only pay the $5 charge if you approve a buyer. Check out our <a href="{% url "sellers guide" %}">Seller's Guide</a> for more info!</p>
           </div>
         </div>
         <div id="step-2" class="step text-center col-xs-12 col-sm-4">
+<!--
           <div class="step-explanation center-block">
-             <h4><i>....and buyers...</i></h4>
+             <h4>....and buyers...</h4>
           </div>
+-->
           <img class="step-image" src="{% static "sparestub/logos/buy-optimized.png" %}">
           <div class="step-explanation center-block">
-            <h4>Find a ticket and a new friend</h4>
+            <span class="title">Find a ticket and a new friend</span>
             <p>Search for spare stubs in your city. Check out the seller's bio and user reviews. Get to know each other. Match made in heaven? Request to Buy the ticket. Check out the <a href="{% url "buyers guide" %}">Buyer's Guide</a> for more info!</p>
           </div>
         </div>
         <div id="step-3" class="step text-center col-xs-12 col-sm-4">
+<!--
           <div class="step-explanation center-block">
-             <h4><i>...come together!</i></h4>
+             <h4>...come together!</h4>
           </div>
+-->
           <img class="step-image" src="{% static "sparestub/logos/go-optimized.png" %}">
           <div class="step-explanation center-block">
-            <h4>And Then... Happily Ever After</h4>
+            <span class="title">And Then... Happily Ever After</span>
             <p>Buyers and sellers handle the ticket and payment exchange however works best for them, and then have a great night together! After the event, they can leave each other a review.</p>
           </div>
         </div>
@@ -90,7 +101,7 @@
   </div>
 
   <div id="press" style="background-image: url({% static "sparestub/backgrounds/cityscape-optimized.jpg" %});">
-    <h2 id="press-title" class="text-center">SpareStub in the Press</h2>
+    <h2 id="press-title" class="section-title shadow-white">SpareStub in the Press</h2>
       <div class="column-press">
         <img class="press-image" src="{% static "sparestub/logos/dzone.png" %}">
         <h4><a href="http://css.dzone.com/articles/sparestub-thank-open-source" target="_blank">The Next Phase of Business Evolution: How Open Source is Launching Startups like SpareStub</a></h4>
@@ -109,33 +120,51 @@
       </div>
     </div>
   <div class="footer">
+
     <div class="footer-container">
         <ul class="footer-column">
-            <li class="footer-column-title">Follow the Adventure</li>
-              <li><a href="https://www.twitter.com/sparestub/" target="_blank">Twitter</a></li>
-              <li><a href="http://www.instagram.com/sparestub/" target="_blank">Instagram</a></li>
-              <li><a href="http://www.facebook.com/sparestub/" target="_blank">Facebook</a></li>
-              <li><a href="https://www.linkedin.com/company/sparestub" target="_blank">LinkedIn</a></li>
-        </ul>
-        <ul class="footer-column">
             <li class="footer-column-title">Talking Shop</li>
-              <li><a href="{% url "buyers guide" %}">Buyer's Guide</a></li>
-              <li><a href="{% url "sellers guide" %}">Seller's Guide</a></li>
-              <li><a href="{% url "dispute resolution" %}">Dispute Resolution</a></li>
-              <li><a href="{% url "tos" %}">Terms of Service</a></li>
-              <li><a href="{% url "privacy policy" %}">Privacy Policy</a></li>
-              <li><a href="{% url "safety tips" %}">Safety Tips</a></li>
-              <li><a href="http://www.ag.ny.gov/sites/default/files/pdfs/bureaus/consumer_fraud/dating_service.pdf">Online Connection Bill of Rights</a></li>
+            <li><a href="{% url "buyers guide" %}">Buyer's Guide</a></li>
+            <li><a href="{% url "sellers guide" %}">Seller's Guide</a></li>
+            <li><a href="{% url "dispute resolution" %}">Dispute Resolution</a></li>
+            <li><a href="{% url "safety tips" %}">Safety Tips</a></li>
+            <li><a href="http://www.ag.ny.gov/sites/default/files/pdfs/bureaus/consumer_fraud/dating_service.pdf">Online Connection Bill of Rights</a></li>
           {% comment %} TODO <a href="{% url "press_kit" %}">Press Kit</a> {% endcomment %}
         </ul>
+		<ul class="footer-column">
+            <li class="footer-column-title">Follow the Adventure</li>
+            <li class="social">
+			  <a href="https://www.twitter.com/sparestub/" target="_blank">
+				<img src="{% static "sparestub/images/svg/twitter12.svg" %}" alt="sparestub twitter" />
+			  </a>
+			</li>
+            <li class="social">
+			  <a href="http://www.instagram.com/sparestub/" target="_blank">
+				<img src="{% static "sparestub/images/svg/instagram19.svg" %}" alt="sparestub instagram" />
+			  </a>
+			</li>
+            <li class="social">
+			  <a href="http://www.facebook.com/sparestub/" target="_blank">
+				<img src="{% static "sparestub/images/svg/facebook2.svg" %}" alt="sparestub facebook" />
+			  </a>
+			</li>
+            <li class="social">
+			  <a href="https://www.linkedin.com/company/sparestub" target="_blank">
+				<img src="{% static "sparestub/images/svg/linkedin1.svg" %}" alt="sparestub linkedin" />
+			  </a>
+			</li>
+        </ul>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-12 center-block text-center">
-          <p><br><br>SpareStub LLC &copy 2015</p>
-        </div>
-      </div>
-    </div>
+	<div class="clearfix"></div>
+	<div class="bottom">
+	  <ul>
+		<li>SpareStub LLC &copy 2015</li>
+		<li>·</li>
+		<li><a href="{% url "tos" %}">Terms of Service</a></li>
+		<li>·</li>
+		<li><a href="{% url "privacy policy" %}">Privacy Policy</a></li>
+	  </ul>
+	</div>
   </div>
   <div id="debugging"></div>
 {% endblock %}

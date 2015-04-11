@@ -214,6 +214,8 @@
     <Folder Include="sparestub\static\backgrounds\" />
     <Folder Include="sparestub\static\css\" />
     <Folder Include="sparestub\static\fonts\" />
+    <Folder Include="sparestub\static\images\" />
+    <Folder Include="sparestub\static\images\svg\" />
     <Folder Include="sparestub\static\js\" />
     <Folder Include="sparestub\static\logos\" />
     <Folder Include="sparestub\templates\" />
@@ -370,6 +372,11 @@
     <Content Include="sparestub\static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="sparestub\static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="sparestub\static\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="sparestub\static\images\svg\facebook2.svg" />
+    <Content Include="sparestub\static\images\svg\instagram19.svg" />
+    <Content Include="sparestub\static\images\svg\license.pdf" />
+    <Content Include="sparestub\static\images\svg\linkedin1.svg" />
+    <Content Include="sparestub\static\images\svg\twitter12.svg" />
     <Content Include="sparestub\static\js\autoNumeric.js" />
     <Content Include="sparestub\static\js\base.js" />
     <Content Include="sparestub\static\js\bootstrap-datetimepicker.js" />

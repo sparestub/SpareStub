@@ -14,6 +14,9 @@
 {% endblock %}
 
 {% block profile_body %}
+  <div class="tickets-review-panel">
+	<a href="javascript:window.history.back()"><<< back to search results</a>
+  </div>   
   <div class="panel panel-primary tickets-review-panel transbox">
     <div class="panel-heading">
       <a style="color:#ffffff" href="{% url "profile_tickets" username=user_info.username %}"><span class="glyphicon glyphicon-arrow-left"></span>  See All User's Tickets</a>

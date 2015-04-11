@@ -28,8 +28,7 @@ $(document).ready(function () {
 
     var constant_height = $('.navbar').outerHeight(true) +
                           parseInt($('#introduction').css('padding-top'), 10) +
-                          $('#top-intro1').outerHeight(true) +
-                          $('#top-intro2').outerHeight(true) +
+                          $('.intro-section').outerHeight(true) +
                           $('#intro-button-div').outerHeight(true) +
                           $('#learn-more').outerHeight(true);
 

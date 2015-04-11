@@ -1,4 +1,20 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.shadow-black {
+    text-shadow: 1px 1px black;
+}
+
+.shadow-white {
+    text-shadow: 1px 1px white;
+}
+
+.clearfix {
+    clear:both;
+}
 
 /*
 .panel-heading {
@@ -535,4 +551,3 @@ span.twitter-typeahead {
 .input-group.input-group-sm span.twitter-typeahead .tt-dropdown-menu {
   top: 28px !important;
 }
-

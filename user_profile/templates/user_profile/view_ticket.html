@@ -14,12 +14,9 @@
 {% endblock %}
 
 {% block profile_body %}
-  <div class="tickets-review-panel">
-	<a href="javascript:window.history.back()"><<< back to search results</a>
-  </div>   
   <div class="panel panel-primary tickets-review-panel transbox">
     <div class="panel-heading">
-      <a style="color:#ffffff" href="{% url "profile_tickets" username=user_info.username %}"><span class="glyphicon glyphicon-arrow-left"></span>  See All User's Tickets</a>
+      <a style="color:#ffffff" href="javascript:window.history.back()"><span class="glyphicon glyphicon-arrow-left"></span>  back to search results</a>
     </div>
     <div id="ticket-contents" class="panel-body">
       <div id="row-top" class="row">
@@ -58,7 +55,7 @@
             <p></p>
           </div>
         </div>
-          <div id="buy-or-message-buttons">
+        <div id="buy-or-message-buttons">
             {% if is_owner %}
               <button id="delete-ticket" type=button class="btn btn-primary cancel-ticket" type="button">Delete Ticket</button>
             {% else %}
@@ -72,7 +69,11 @@
                 <button id="buy-it-now" class="btn btn-default" type="button">Buy It Now</button>
               {% endif %}
             {% endif %}
-          </div>
+        </div>
+		<div class="clearfix"></div>
+		<div style="padding-top: 10px">
+			<a href="{% url "profile_tickets" username=user_info.username %}">See All Tickets From {{ ticket.poster.first_name }}</a>
+		</div>
     </div>
       <div class="column-right-ticket">
         <img class="instruction" src="{% static "user_profile/pics/ticket_instructions.png" %}">

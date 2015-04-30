@@ -14,20 +14,22 @@
     <div class="container">
       <div class="row text-center">
         <h1 class="col-xs-12 section-title intro-section">
-			<span class="shadow-black">Buyers and sellers attend events together</span>
+			<span class="shadow-black">Buyer, meet seller.</span>
 		</h1>
 		<h3 class="col-xs-12 section-title intro-section">
-			<span class="shadow-black">It's ticket resale... but better</span>
+			<span class="shadow-black">SpareStub is the first marketplace where you can sell your extra ticket and find someone to go to the event with you.</span>
 		</h3>
         <div id="intro-button-div" class="col-xs-12">
+			<!--
           <div id="left-intro">
               <button id="search-now" class="btn btn-primary intro-btn" type="button">Search Now</button>
           </div>
+				-->
           <div id="right-intro">
           {% if user.is_authenticated %}
             <button class="btn btn-primary intro-btn submit-ticket-form-button" type="button" data-toggle="modal">Submit Your Stub</button>
           {% else %}
-            <button class="btn btn-primary intro-btn signup-form-button" type="button" data-toggle="modal" data-target="#modal-signup-root">Join In!</button>
+            <button class="btn btn-primary intro-btn signup-form-button" type="button" data-toggle="modal" data-target="#modal-signup-root">Join now to search, buy or sell tickets</button>
           {% endif %}
           </div>
         </div>

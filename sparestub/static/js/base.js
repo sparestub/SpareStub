@@ -205,10 +205,26 @@ $(document).ready(function ($) {
         });
     });
 
+    $('#search-ticket-submit').on('click', function () {
+        if (!window.additional_parameters.is_authenticated) {
+            load_login_modal(true);
+            return false; // block the form submission
+        }
+
+        // hack: copied from the above function (submit ticket).
+        //
+        var $modal_submit_ticket_form_content = $('#modal-submit-ticket-form-content');
+
+        // If the modal content has already been loaded, don't do it again
+        if ($modal_submit_ticket_form_content.children().length > 0) {
+            $('#modal-submit-ticket-root').modal('show');
+            return false;  // block the form submission
+        }
+    });
+    
     initialize_date_pickers();
     prepare_ticket_search_dropdown();
 
     // Initialize when the page loads so that ticker search autocomplete woks
     initialize_location_autocomplete();
 }($));
-

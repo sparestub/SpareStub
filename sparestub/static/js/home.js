@@ -16,6 +16,8 @@ $(document).on('ready', function () {
 });
 
 $(document).ready(function () {
+    return; // hack
+
     // avoiding iphone / ipad / ipod for now.
     if (navigator.userAgent.search(/Iphone/i) >= 0)
         return;
@@ -51,11 +53,11 @@ $(document).ready(function () {
     $('#buffer').height(new_padding);
 });
 
-(function () {
-    'use strict';
-    var ios = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
-    // IOS devices do not properly support fixed background images. Change them to scroll if the device is ios.
-    if (ios) {
-        document.getElementById('introducing-sparestub').style.backgroundAttachment = 'scroll';
-    }
-}());
+//(function () {
+//    'use strict';
+//    var ios = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+//    // IOS devices do not properly support fixed background images. Change them to scroll if the device is ios.
+//    if (ios) {
+//        document.getElementById('introducing-sparestub').style.backgroundAttachment = 'scroll';
+//    }
+//}());

@@ -205,6 +205,7 @@ $(document).ready(function ($) {
         });
     });
 
+    // search-submit button
     $('#search-ticket-submit').on('click', function () {
         if (!window.additional_parameters.is_authenticated) {
             load_login_modal(true);
@@ -221,10 +222,21 @@ $(document).ready(function ($) {
             return false;  // block the form submission
         }
     });
-    
-    initialize_date_pickers();
-    prepare_ticket_search_dropdown();
+   
+    // search-input-box
+    if (!window.additional_parameters.is_authenticated) {
 
-    // Initialize when the page loads so that ticker search autocomplete woks
-    initialize_location_autocomplete();
+        $('#search-ticket-input').on('click', function () {
+            load_login_modal(true);
+            return false; // block the form submission
+        });
+    }
+    else
+    {
+        initialize_date_pickers();
+        prepare_ticket_search_dropdown();
+
+        // Initialize when the page loads so that ticker search autocomplete woks
+        initialize_location_autocomplete();
+    }
 }($));

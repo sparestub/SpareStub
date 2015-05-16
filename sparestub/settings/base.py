@@ -158,6 +158,7 @@ AWS_QUERYSTRING_EXPIRE = 99999999  # This cannot be a small number! When we comp
 AWS_IS_GZIPPED = True
 AWS_QUERYSTRING_AUTH = False
 
+ADMIN_EMAIL_ADDRESS = 'stephanie@sparestub.com'
 SOCIAL_EMAIL_ADDRESS = 'shout@sparestub.com'
 SOCIAL_EMAIL_NAME = 'SpareStub'
 

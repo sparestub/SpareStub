@@ -47,7 +47,7 @@ class SearchTicketForm(FacetedSearchForm):
                 sqs = self.searchqueryset
             else:
                 # Default to new york if the user tries to search everywhere
-                self.cleaned_data['location_raw'] = "New York, NY"
+                #self.cleaned_data['location_raw'] = "New York, NY"
                 sqs = self.searchqueryset
 
         # Check to see if a location was chosen. Make sure search results are from that location

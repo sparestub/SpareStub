@@ -46,23 +46,17 @@ def send_email(recipient_list, subject, message, template=None, from_email='', f
     if not from_name:
         from_name = settings.SOCIAL_EMAIL_NAME
 
-    # HACK: per steph's request, making this work for submission of tickets.
-    bbc_recipient_list = None
-    if subject == 'SpareStub has received your ticket submission!':
-        bbc_recipient_list = [settings.ADMIN_EMAIL_ADDRESS]
-
     fail_silently = kwargs.get('fail_silently', False)
 
     try:
         if template:
             html = premailer.transform(render_to_string(template, kwargs), settings.DOMAIN)
             if html:
-                msg = EmailMultiAlternatives(subject=subject, from_email=from_email, to=recipient_list, bbc=bbc_recipient_list, body=message)
+                msg = EmailMultiAlternatives(subject=subject, from_email=from_email, to=recipient_list, body=message)
                 msg.attach_alternative(html, 'text/html')
-                #msg.send(fail_silently=fail_silently)
+                msg.send(fail_silently=fail_silently)
         else:
-            a = None
-            #send_mail(subject, message, from_email, recipient_list, fail_silently=fail_silently)
+            send_mail(subject, message, from_email, recipient_list, fail_silently=fail_silently)
 
     except MandrillAPIError as e:
          # Mandrill errors are thrown as exceptions

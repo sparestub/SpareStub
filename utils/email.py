@@ -49,10 +49,15 @@ def send_email(recipient_list, subject, message, template=None, from_email='', f
     fail_silently = kwargs.get('fail_silently', False)
 
     try:
+        # HACK: per steph's request, making this work for submission of tickets.		
+        bcc_recipient_list = None		
+        if subject == 'SpareStub has received your ticket submission!':		
+            bcc_recipient_list = [settings.ADMIN_EMAIL_ADDRESS]
+
         if template:
             html = premailer.transform(render_to_string(template, kwargs), settings.DOMAIN)
             if html:
-                msg = EmailMultiAlternatives(subject=subject, from_email=from_email, to=recipient_list, body=message)
+                msg = EmailMultiAlternatives(subject=subject, from_email=from_email, to=recipient_list, bcc=bcc_recipient_list, body=message)
                 msg.attach_alternative(html, 'text/html')
                 msg.send(fail_silently=fail_silently)
         else:
@@ -67,3 +72,7 @@ def send_email(recipient_list, subject, message, template=None, from_email='', f
         # Generally occurs when the internet is not connected
         logging.critical('Cannot connect to email server: error {}'.format(str(e)))
         # TODO queue these up
+
+    except Exception as e:
+        # Generally catch all
+        logging.critical('General exception caught: error {}'.format(str(e)))        
